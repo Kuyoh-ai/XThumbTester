@@ -337,11 +337,16 @@ h1 {
 /* サムネイル画像 */
 .thumbnail-item {
     position: absolute;
+    overflow: hidden;
+}
+
+/* 1枚の画像用のデフォルト配置 */
+.thumbnail-container.layout-1-tall .thumbnail-item,
+.thumbnail-container.layout-1-wide .thumbnail-item {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 .thumbnail-item img {

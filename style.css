@@ -238,10 +238,30 @@ h1 {
     display: block;
 }
 
+/* サムネイル画像の基本スタイル */
+.thumbnail-item {
+    position: absolute;
+    overflow: hidden;
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* 1枚の画像 - 縦長 */
 .thumbnail-container.layout-1-tall {
     position: relative;
     padding-bottom: 133.333%;
+}
+
+.thumbnail-container.layout-1-tall .thumbnail-item {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* 1枚の画像 - 横長 */
@@ -250,24 +270,30 @@ h1 {
     padding-bottom: 56.25%;
 }
 
+.thumbnail-container.layout-1-wide .thumbnail-item {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* 2枚の画像 - row: [1] [2] */
 .thumbnail-container.layout-2 {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
 }
 
-.thumbnail-container.layout-2 > .thumbnail-item {
-    position: absolute;
+.thumbnail-container.layout-2 .thumbnail-item {
     top: 0;
     bottom: 0;
     width: calc(50% - 1px); /* gap: 2px (各側1px) */
 }
 
-.thumbnail-container.layout-2 > .thumbnail-item:first-child {
+.thumbnail-container.layout-2 .thumbnail-item:first-child {
     left: 0;
 }
 
-.thumbnail-container.layout-2 > .thumbnail-item:nth-child(2) {
+.thumbnail-container.layout-2 .thumbnail-item:nth-child(2) {
     right: 0;
 }
 
@@ -277,25 +303,21 @@ h1 {
     padding-bottom: 56.25%; /* 16:9 */
 }
 
-.thumbnail-container.layout-3 > .thumbnail-item {
-    position: absolute;
-}
-
-.thumbnail-container.layout-3 > .thumbnail-item:first-child {
+.thumbnail-container.layout-3 .thumbnail-item:first-child {
     top: 0;
     left: 0;
     bottom: 0;
     width: calc(50% - 1px);
 }
 
-.thumbnail-container.layout-3 > .thumbnail-item:nth-child(2) {
+.thumbnail-container.layout-3 .thumbnail-item:nth-child(2) {
     top: 0;
     right: 0;
     height: calc(50% - 1px);
     width: calc(50% - 1px);
 }
 
-.thumbnail-container.layout-3 > .thumbnail-item:nth-child(3) {
+.thumbnail-container.layout-3 .thumbnail-item:nth-child(3) {
     bottom: 0;
     right: 0;
     height: calc(50% - 1px);
@@ -308,52 +330,29 @@ h1 {
     padding-bottom: 56.25%; /* 16:9 */
 }
 
-.thumbnail-container.layout-4 > .thumbnail-item {
-    position: absolute;
+.thumbnail-container.layout-4 .thumbnail-item {
     width: calc(50% - 1px);
     height: calc(50% - 1px);
 }
 
-.thumbnail-container.layout-4 > .thumbnail-item:nth-child(1) {
+.thumbnail-container.layout-4 .thumbnail-item:nth-child(1) {
     top: 0;
     left: 0;
 }
 
-.thumbnail-container.layout-4 > .thumbnail-item:nth-child(2) {
+.thumbnail-container.layout-4 .thumbnail-item:nth-child(2) {
     top: 0;
     right: 0;
 }
 
-.thumbnail-container.layout-4 > .thumbnail-item:nth-child(3) {
+.thumbnail-container.layout-4 .thumbnail-item:nth-child(3) {
     bottom: 0;
     left: 0;
 }
 
-.thumbnail-container.layout-4 > .thumbnail-item:nth-child(4) {
+.thumbnail-container.layout-4 .thumbnail-item:nth-child(4) {
     bottom: 0;
     right: 0;
-}
-
-/* サムネイル画像 */
-.thumbnail-item {
-    position: absolute;
-    overflow: hidden;
-}
-
-/* 1枚の画像用のデフォルト配置 */
-.thumbnail-container.layout-1-tall .thumbnail-item,
-.thumbnail-container.layout-1-wide .thumbnail-item {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.thumbnail-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 footer {

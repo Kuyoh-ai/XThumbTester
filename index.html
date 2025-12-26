@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X (Twitter) Thumbnail Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>𝕏 Thumbnail Simulator</h1>
+            <p class="subtitle">画像をアップロードして、Xのタイムラインでのサムネイル表示をシミュレートします</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">画像をドラッグ&ドロップ</p>
+                    <p class="upload-subtext">または</p>
+                    <button class="btn-upload" id="selectBtn">ファイルを選択</button>
+                    <p class="upload-hint">Ctrl+V でクリップボードから貼り付けも可能</p>
+                    <p class="upload-limit">最大4枚まで</p>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+            </div>
+
+            <div class="controls">
+                <button class="btn-clear" id="clearBtn">クリア</button>
+                <span class="image-count" id="imageCount">0 / 4</span>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <div class="preview-section">
+            <h2>プレビュー</h2>
+            <div class="tweet-container">
+                <div class="tweet-header">
+                    <div class="avatar"></div>
+                    <div class="user-info">
+                        <span class="display-name">ユーザー名</span>
+                        <span class="username">@username</span>
+                    </div>
+                </div>
+                <div class="tweet-text">
+                    画像付きツイートのサムネイル表示例
+                </div>
+                <div class="thumbnail-container" id="thumbnailContainer">
+                    <!-- Thumbnails will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Made with 𝕏 Thumbnail Simulator</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
